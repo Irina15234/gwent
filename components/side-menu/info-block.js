@@ -1,4 +1,6 @@
-function infoBlock({title, subtitle, cardsCount, livesCount, avatar}) {
+function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
+  const pointsClasses = 'info-block__points-container' + ' ' + person;
+
   return `
     <div class="info-block">
       <div class="info-block__container">
@@ -22,5 +24,7 @@ function infoBlock({title, subtitle, cardsCount, livesCount, avatar}) {
           </div>
         </div>
       </div>
+      
+      <div class="${pointsClasses}"><span class="info-block__points">0</span></div>
     </div>`
 }

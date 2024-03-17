@@ -9,7 +9,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Противник',
         subtitle: 'Нильфгаард',
-        avatar: null,
+        person: null,
         cardsCount: 20,
         livesCount: 2
     });
@@ -17,7 +17,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Геральт',
         subtitle: 'Королевства севера',
-        avatar: null,
+        person: null,
         cardsCount: 20,
         livesCount: 2
     });

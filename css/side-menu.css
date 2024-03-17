@@ -124,3 +124,26 @@ div:has(> .info-block__cards) {
     background-image: url("../assets/crown.svg");
     background-size: contain;
 }
+
+.info-block__points-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transform: translate(50%, -50%);
+    height: 60%;
+    aspect-ratio: 1/1;
+    z-index: 3;
+    filter: drop-shadow(0px 0px 4px black);
+}
+
+.info-block__points {
+    font-size: 3vh;
+    color: black;
+    font-weight: bold;
+    filter: drop-shadow(0px 0px 2px white);
+}
