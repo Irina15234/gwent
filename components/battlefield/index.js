@@ -12,4 +12,6 @@ function renderBattlefield() {
     battlefieldBoardBottom.innerHTML += battlefieldRow({});
 
     battlefieldCards.innerHTML = battlefieldCardsContainer({});
+
+    renderBattlefieldSide({});
 }

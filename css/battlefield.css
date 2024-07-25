@@ -1,3 +1,57 @@
+#battlefield {
+  width: 70%;
+  min-width: 600px;
+  background-image: url("../assets/wood-hor-2.jpg");
+  background-size: cover;
+  display: flex;
+  padding: 16px 24px 16px 100px;
+}
+
+#battlefield:before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 31, 13, 0.1) linear-gradient(32deg, rgba(47, 31, 13, 0.9) 2%, rgba(47, 31, 13, 0.4) 100%);
+  box-shadow: -20px -50px 71px -12px rgba(0, 0, 0, 0.9) inset;
+}
+
+#battlefield > div {
+  height: 100%;
+  width: 100%;
+}
+
+div#battlefield-side {
+  width: 240px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#battlefield-board, #battlefield-board__top, #battlefield-board__bottom {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#battlefield-board__top, #battlefield-board__bottom {
+  height: 40%;
+}
+
+#battlefield-board__divider{
+  height: 24px;
+}
+
+#battlefield-cards {
+  height: calc(20% - 24px);
+  width: 100%;
+  padding-top: 20px;
+}
+
 .battlefield-row {
   width: 100%;
   min-height: 80px;
@@ -65,4 +119,48 @@
   background-size: contain;
   filter: invert(1);
   opacity: 0.7;
+}
+
+.battlefield-side__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.battlefield-side__container img {
+  width: 100%;
+  height: 100%;
+}
+
+.battlefield-side__discard {
+  width: 100px;
+  height: 150px;
+  box-shadow: 0 -8px 20px 4px rgba(0, 0, 0, 0.8) inset;
+}
+
+.battlefield-side__container .battlefield-side__discard img {
+  width: 80%;
+  height: 80%;
+  transform: translate(10%, 10%);
+}
+
+.battlefield-side__card-desk {
+  width: 100px;
+  height: 150px;
+  box-shadow: 4px 4px 4px 0 rgb(119 103 76);
+}
+
+.battlefield-side__count {
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 16px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.battlefield-side__discard_disabled img {
+  display: none;
 }

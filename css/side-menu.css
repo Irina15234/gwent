@@ -1,3 +1,25 @@
+#side-menu {
+    width: 30%;
+    min-width: 300px;
+    background-image: url("../assets/wood-hor.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#side-menu:before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-brown-opacity-color);
+    box-shadow: 59px -40px 71px 0 rgba(0, 0, 0, 0.8) inset, 0 -69px 71px -12px rgba(0, 0, 0, 0.5) inset, -10px 0 24px 0 rgba(0, 0, 0, 0.5) inset;
+}
+
 .info-block {
     background: rgba(0, 0, 0, 0.5);
     padding: 4px;
