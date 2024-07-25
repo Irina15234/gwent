@@ -2,7 +2,7 @@ function renderSideMenu() {
     const sideMenu = document.getElementById("side-menu");
 
     sideMenu.innerHTML = leaderBlock({
-        leader: null,
+        leader: { card: 'assets/cards/emgir.jpg' },
         isActiveAction: true
     });
 
@@ -23,7 +23,7 @@ function renderSideMenu() {
     });
 
     sideMenu.innerHTML += leaderBlock({
-        leader: null,
+        leader: { card: 'assets/cards/foltest.jpg' },
         isActiveAction: false
     });
 }
