@@ -1,0 +1,68 @@
+.battlefield-row {
+  width: 100%;
+  min-height: 80px;
+  height: 100%;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.battlefield-row:last-child {
+  margin-bottom: 0;
+}
+
+.battlefield-row .points-container {
+  right: auto;
+  left: 0;
+  transform: translate(-80%, -50%);
+}
+
+.battlefield-row__spec-container {
+  box-shadow: 4px -6px 16px 0 rgba(0, 0, 0, 0.7) inset, 0 1px 2px 0 rgba(255, 222, 129, 0.5);
+  aspect-ratio: 1/1;
+  height: 100%;
+  margin-right: 8px;
+}
+
+.battlefield-row__spec-container:after {
+  content: "";
+  position: absolute;
+  aspect-ratio: 67/100;
+  top: 10%;
+  left: 0;
+  height: 70%;
+  transform: translateX(calc(50% + 4px));
+  background-image: url("../assets/flag.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  opacity: 0.6;
+}
+
+.battlefield-row__spec-container:before {
+  content: "";
+  position: absolute;
+  aspect-ratio: 1/1;
+  height: 100%;
+  background-image: url("../assets/invert-ornament.png");
+  background-size: cover;
+  filter: opacity(0.5);
+}
+
+.battlefield-row__container {
+  height: 100%;
+  width: 100%;
+  box-shadow: 4px -6px 16px 0 rgba(0, 0, 0, 0.7) inset, 0 1px 2px 0 rgba(255, 222, 129, 0.5);
+}
+
+.battlefield-row__container:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../assets/hor-ornament.png");
+  background-size: contain;
+  filter: invert(1);
+  opacity: 0.9;
+}

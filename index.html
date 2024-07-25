@@ -7,19 +7,40 @@
   <link rel="stylesheet" type="text/css" href="./css/variables.css"/>
   <link rel="stylesheet" type="text/css" href="./css/index.css"/>
   <link rel="stylesheet" type="text/css" href="./css/side-menu.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/battlefield.css"/>
 
   <script src="./js/includeHTMLModules.js"></script>
+
   <script src="./components/side-menu/index.js"></script>
   <script src="./components/side-menu/info-block.js"></script>
   <script src="./components/side-menu/leader-block.js"></script>
+
+  <script src="./components/battlefield/index.js"></script>
+  <script src="components/battlefield/battlefieldRow.js"></script>
+  <script src="components/battlefield/battlefieldCards.js"></script>
 </head>
 <body>
 <div id="main-body">
   <div id="side-menu"></div>
-  <div id="battlefield"></div>
+  <div id="battlefield">
+    <div>
+      <div id="battlefield-board">
+        <div id="battlefield-board__top">
+
+        </div>
+        <div id="battlefield-board__divider"></div>
+        <div id="battlefield-board__bottom">
+
+        </div>
+        <div id="battlefield-cards"></div>
+      </div>
+    </div>
+    <div id="battlefield-side"></div>
+  </div>
 </div>
 
 <script>includeHTML();</script>
 <script>renderSideMenu();</script>
+<script>renderBattlefield();</script>
 </body>
 </html>

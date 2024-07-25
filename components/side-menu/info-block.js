@@ -1,5 +1,5 @@
 function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
-  const pointsClasses = 'info-block__points-container' + ' ' + person;
+  const pointsClasses = 'points-container' + ' ' + person;
 
   return `
     <div class="info-block">
@@ -25,6 +25,6 @@ function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
         </div>
       </div>
       
-      <div class="${pointsClasses}"><span class="info-block__points">0</span></div>
+      <div class="${pointsClasses}"><span class="points">0</span></div>
     </div>`
 }
