@@ -5,7 +5,7 @@ function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
     <div class="info-block">
       <div class="info-block__container">
         <div class="info-block__avatar-container">
-          <div class="info-block__avatar" ></div>
+          <div class="info-block__avatar"><img alt="" src=${person.emblem} /></div>
         </div>
         <div>
           <div>

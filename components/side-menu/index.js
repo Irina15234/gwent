@@ -9,7 +9,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Противник',
         subtitle: 'Нильфгаард',
-        person: null,
+        person: { emblem: 'assets/nilfEmblem.png' },
         cardsCount: 20,
         livesCount: 2
     });
@@ -17,7 +17,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Геральт',
         subtitle: 'Королевства севера',
-        person: null,
+        person: { emblem: 'assets/temEmblem.png' },
         cardsCount: 20,
         livesCount: 2
     });

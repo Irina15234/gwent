@@ -15,7 +15,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    background: grey;
+    background: grey url("../assets/metal.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,7 @@
 
 .points {
     font-size: 3vh;
-    color: black;
+    color: #444444;
     font-weight: bold;
     filter: drop-shadow(0px 0px 2px white);
 }
