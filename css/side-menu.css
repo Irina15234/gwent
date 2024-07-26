@@ -114,7 +114,6 @@ div:has(> .info-block__cards) {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
 }
 
 .leader-block__container img:hover {
