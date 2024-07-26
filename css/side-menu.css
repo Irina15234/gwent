@@ -103,7 +103,7 @@ div:has(> .info-block__cards) {
 .leader-block img {
     max-width: 100%;
     max-height: 90%;
-    cursor: pointer;
+    cursor: url("../assets/pointer.png"), pointer;
 }
 
 .leader-block__container {
@@ -114,6 +114,17 @@ div:has(> .info-block__cards) {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+}
+
+.leader-block__container img:hover {
+    scale: 1.2;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.leader-block__container img {
+    border-radius: 8px;
+    transition: 150ms ease-in-out;
 }
 
 .leader-block__action {
@@ -135,7 +146,7 @@ div:has(> .info-block__cards) {
     margin-left: auto;
     border-radius: 100%;
     border: 2px solid darkred;
-    cursor: pointer;
+    cursor: url("../assets/pointer.png"), pointer;
     padding: 6px;
     display: flex;
     align-items: center;

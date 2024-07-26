@@ -20,6 +20,10 @@
   <script src="components/battlefield/battlefieldCards.js"></script>
 
   <script src="components/battlefield/side/index.js"></script>
+
+  <script src="components/common/card.js"></script>
+
+  <script src="js/handlers.js"></script>
 </head>
 <body>
 <div id="main-body">
@@ -39,10 +43,12 @@
     </div>
     <div id="battlefield-side"></div>
   </div>
+  <div id="backdrop"></div>
 </div>
 
 <script>includeHTML();</script>
 <script>renderSideMenu();</script>
 <script>renderBattlefield();</script>
+<script>addHandlers();</script>
 </body>
 </html>
