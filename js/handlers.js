@@ -54,4 +54,34 @@ function addLeadersHandlers() {
 function addHandlers() {
   addBackdropHandlers();
   addLeadersHandlers();
+  addActionPanelHandlers();
+}
+
+function addActionPanelHandlers() {
+  const start = document.getElementById('start-command');
+  const continueCommand = document.getElementById('continue-command');
+  const end = document.getElementById('end-command');
+  const endGame = document.getElementById('endgame-command');
+
+  start.addEventListener('click', () => {
+    isActiveGame = true;
+
+    continueCommand.className = '';
+    end.className = '';
+    endGame.className = '';
+    start.classList.add('battlefield-side__action-panel_command_disabled');
+  });
+  continueCommand.addEventListener('click', () => {
+    // pas
+  });
+  end.addEventListener('click', () => {
+    activePerson = activePerson === 'player' ? 'comp' : 'player';
+  });
+  endGame.addEventListener('click', () => {
+    isActiveGame = false;
+    continueCommand.classList.add('battlefield-side__action-panel_command_disabled');
+    end.classList.add('battlefield-side__action-panel_command_disabled');
+    endGame.classList.add('battlefield-side__action-panel_command_disabled');
+    start.className = '';
+  });
 }

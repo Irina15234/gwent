@@ -165,3 +165,30 @@ div#battlefield-side {
 .battlefield-side__discard_disabled img {
   display: none;
 }
+
+.battlefield-side__action-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  border: 2px solid var(--dark-yellow-color);
+  margin: 0 12px;
+  box-shadow: 0 -8px 20px 4px rgba(0, 0, 0, 0.8) inset;
+  color: var(--dark-yellow-color);
+}
+
+.battlefield-side__action-panel p {
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.battlefield-side__action-panel p:hover {
+  color: var(--light-yellow-color);
+  cursor: url("../assets/pointer.png"), pointer;
+}
+
+.battlefield-side__action-panel_command_disabled {
+  display: none;
+}
