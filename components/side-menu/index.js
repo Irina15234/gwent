@@ -9,7 +9,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Противник',
         subtitle: 'Нильфгаард',
-        person: { emblem: 'assets/nilfEmblem.png' },
+        person: { emblem: 'assets/nilfEmblem.png', name: 'comp' },
         cardsCount: gameState._cards.comp.hand.count,
         livesCount: gameState._lives.comp
     });
@@ -17,7 +17,7 @@ function renderSideMenu() {
     sideMenu.innerHTML += infoBlock({
         title: 'Геральт',
         subtitle: 'Королевства севера',
-        person: { emblem: 'assets/temEmblem.png' },
+        person: { emblem: 'assets/temEmblem.png', name: 'player' },
         cardsCount: gameState._cards.player.hand.count,
         livesCount: gameState._lives.player
     });

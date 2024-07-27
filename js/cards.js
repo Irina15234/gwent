@@ -1,19 +1,33 @@
 const playerCards = [
   {
-    row: 'closeFight',
+    row: 'warrior',
     power: 10,
     additional: {},
     isGold: true,
     img: '../assets/cards/roshe.png'
-  }
+  },
+  {
+    row: 'archer',
+    power: 10,
+    additional: {},
+    isGold: true,
+    img: '../assets/cards/roshe.png'
+  },
 ];
 
 const compCards = [
   {
-    row: '',
-    power: 0,
+    row: 'archer',
+    power: 2,
     additional: {},
     isGold: false,
     img: '../assets/cards/'
-  }
+  },
+  {
+    row: 'artillery',
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
 ];

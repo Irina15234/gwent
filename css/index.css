@@ -65,3 +65,21 @@
     transform: translate(-50%, -50%);
     transition: 200ms linear;
 }
+
+#round-info {
+    z-index: 99;
+    width: 100vw;
+    height: 30vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dark-yellow-color);
+    font-size: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms linear;
+    pointer-events: none;
+    opacity: 0;
+}
