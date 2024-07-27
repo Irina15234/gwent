@@ -1,11 +1,19 @@
 function renderBattlefieldSide({}) {
   const side = document.getElementById('battlefield-side');
 
-  side.innerHTML = sideContainer({lastDiscard: null, count: 21, card: 'assets/nilfgaard.png' });
+  side.innerHTML = sideContainer({
+    lastDiscard: gameState._cards.comp.reset.last,
+    count: gameState._cards.comp.active.count,
+    card: 'assets/nilfgaard.png'
+  });
 
   side.innerHTML += actionPanel();
 
-  side.innerHTML += sideContainer({lastDiscard: null, count: 13, card: 'assets/temeria.png' });
+  side.innerHTML += sideContainer({
+    lastDiscard: gameState._cards.player.reset.last,
+    count: gameState._cards.player.active.count,
+    card: 'assets/temeria.png'
+  });
 }
 
 function sideContainer({lastDiscard, count, card}) {
