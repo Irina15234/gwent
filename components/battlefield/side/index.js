@@ -4,7 +4,8 @@ function renderBattlefieldSide({}) {
   side.innerHTML = sideContainer({
     lastDiscard: gameState._cards.comp.reset.last,
     count: gameState._cards.comp.active.count,
-    card: 'assets/nilfgaard.png'
+    card: 'assets/nilfgaard.png',
+    personName: 'comp'
   });
 
   side.innerHTML += actionPanel();
@@ -12,13 +13,16 @@ function renderBattlefieldSide({}) {
   side.innerHTML += sideContainer({
     lastDiscard: gameState._cards.player.reset.last,
     count: gameState._cards.player.active.count,
-    card: 'assets/temeria.png'
+    card: 'assets/temeria.png',
+    personName: 'player'
   });
 }
 
-function sideContainer({lastDiscard, count, card}) {
+function sideContainer({lastDiscard, count, card, personName}) {
+  const containerClasses = 'battlefield-side__container' + ' ' + personName;
+
   return `
-    <div class="battlefield-side__container">
+    <div class="${containerClasses}">
       <div class="battlefield-side__discard battlefield-side__discard_disabled"><img alt="" style="" src=${lastDiscard} /></div>
       <div class="battlefield-side__card-desk">
         <img alt="" src=${card} />

@@ -1,9 +1,8 @@
-function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
-  const pointsClasses = 'points-container' + ' ' + person;
-  const cardsCountClasses = 'info-block__cards-count' + ' ' + person.name;
+function infoBlock({title, subtitle, cardsCount, person}) {
+  const blockClasses = `info-block ${person.name}`;
 
   return `
-    <div class="info-block">
+    <div class="${blockClasses}">
       <div class="info-block__container">
         <div class="info-block__avatar-container">
           <div class="info-block__avatar"><img alt="" src=${person.emblem} /></div>
@@ -16,7 +15,7 @@ function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
           <div>
             <div class="info-block__cards">
               <img width="24" height="24" src="../../assets/cards-filled.svg" alt="">
-              <span class="${cardsCountClasses}">${cardsCount}</span>
+              <span class='info-block__cards-count'>${cardsCount}</span>
             </div>
             <div class="info-block__lives">
               <img width="24" height="24" src="../../assets/red-gem.svg" alt="">
@@ -26,6 +25,6 @@ function infoBlock({title, subtitle, cardsCount, livesCount, person}) {
         </div>
       </div>
       
-      <div class="${pointsClasses}"><span class="points">0</span></div>
+      <div class='points-container'><span class="points">0</span></div>
     </div>`
 }

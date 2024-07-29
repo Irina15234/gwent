@@ -52,7 +52,9 @@ Object.defineProperty(gameState, 'isActiveGame', {
       infoNode.innerHTML = v === 'comp' ? 'Ваш противник ходит первым' : 'Вы ходите первым';
       infoNode.style.opacity = '1';
 
-      setTimeout(() => { infoNode.innerHTML = ''; infoNode.style.opacity = '0'; }, 2000);
+      setTimeout(() => {
+        infoNode.style.opacity = '0';
+      }, 1600);
 
       const initCardsCount = 2;
 
@@ -68,7 +70,10 @@ Object.defineProperty(gameState, 'isActiveGame', {
       this.compCards = {
         hand: {count: initCardsCount, cards: initCardsArr},
         reset: {last: null, count: 0, cards: []},
-        active: {count: compCards.length - initCardsCount, cards: compCards.filter((card) => initCards.has(card))}
+        active: {
+          count: compCards.length - initCardsCount,
+          cards: compCards.filter((card) => !initCardsArr.find((item) => card.img === item.img))
+        }
       };
 
       initCards.clear();
@@ -84,7 +89,10 @@ Object.defineProperty(gameState, 'isActiveGame', {
       this.playerCards = {
         hand: {count: initCardsCount, cards: initCardsArr},
         reset: {last: null, count: 0, cards: []},
-        active: {count: playerCards.length - initCardsCount, cards: playerCards.filter((card) => initCards.has(card))}
+        active: {
+          count: playerCards.length - initCardsCount,
+          cards: playerCards.filter((card) => initCards.has(card))
+        }
       };
     }
   },
@@ -99,12 +107,36 @@ Object.defineProperty(gameState, 'lives', {
 Object.defineProperty(gameState, "compCards", {
   set: function (v) {
     this._cards.comp = v;
+
+    const infoBlock = document.getElementsByClassName('info-block comp')[0];
+    infoBlock.getElementsByClassName('info-block__cards-count')[0].innerHTML = v.hand.count;
+    const sideContainer = document.getElementsByClassName('battlefield-side__container comp')[0];
+    sideContainer.getElementsByClassName('battlefield-side__count')[0].innerHTML = v.active.count;
   },
 });
 
 Object.defineProperty(gameState, "playerCards", {
   set: function (v) {
     this._cards.player = v;
+
+    const infoBlock = document.getElementsByClassName('info-block player')[0];
+    infoBlock.getElementsByClassName('info-block__cards-count')[0].innerHTML = v.hand.count;
+    const sideContainer = document.getElementsByClassName('battlefield-side__container player')[0];
+    sideContainer.getElementsByClassName('battlefield-side__count')[0].innerHTML = v.active.count;
+
+    const cardsContainer = document.getElementById('battlefield-cards').getElementsByClassName('battlefield-row__container')[0];
+    const cards = cardsContainer.getElementsByClassName('card-img');
+
+    const newCards = v.hand.cards.filter((card) => {
+      for (const el of cards)
+        if (el.src.includes(card.img))
+          return false;
+
+      return true;
+    });
+    newCards.forEach((newCard) => {
+      cardsContainer.innerHTML += card({ img: newCard.img, hoverScaled: true });
+    });
   },
 });
 
