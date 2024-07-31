@@ -75,7 +75,7 @@ function addActionPanelHandlers() {
     start.classList.add('battlefield-side__action-panel_command_disabled');
   });
   continueCommand.addEventListener('click', () => {
-    // pas
+    gameState.pass = [...gameState._pass, 'player'];
   });
   end.addEventListener('click', () => {
     gameState.activePerson = gameState.activePerson === 'player' ? 'comp' : 'player';
