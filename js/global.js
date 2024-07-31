@@ -1,26 +1,9 @@
-const gameState = {};
-
-Object.defineProperty(gameState, "_isActiveGame", {
-  value: false,
-  writeable: true,
-  configurable: true,
-});
-Object.defineProperty(gameState, "_activePerson", {
-  writeable: true,
-  configurable: true
-});
-Object.defineProperty(gameState, "_lives", {
-  value: {comp: 2, player: 2},
-  writeable: true,
-  configurable: true,
-});
-Object.defineProperty(gameState, "_pass", {
-  value: [],
-  writeable: true,
-  configurable: true,
-});
-Object.defineProperty(gameState, "_cards", {
-  value: {
+const gameState = {
+  _isActiveGame: false,
+  _activePerson: undefined,
+  _lives: {comp: 2, player: 2},
+  _pass: [],
+  _cards: {
     comp: {
       hand: {count: 0, cards: []},
       reset: {last: null, count: 0, cards: []},
@@ -32,9 +15,7 @@ Object.defineProperty(gameState, "_cards", {
       active: {count: playerCards.length, cards: playerCards}
     }
   },
-  writeable: true,
-  configurable: true,
-});
+};
 
 Object.defineProperty(gameState, 'activePerson', {
   set: function (v) {
@@ -135,7 +116,9 @@ Object.defineProperty(gameState, "playerCards", {
       return true;
     });
     newCards.forEach((newCard) => {
-      cardsContainer.innerHTML += card({ img: newCard.img, hoverScaled: true });
+      const newCardNode = card({ img: newCard.img, hoverScaled: true });
+      cardsContainer.append(newCardNode);
+      addHandCardsListeners(newCardNode);
     });
   },
 });

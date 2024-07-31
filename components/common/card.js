@@ -1,9 +1,15 @@
 function card({img, hoverScaled}) {
   const classes = `card ${hoverScaled ? 'card_scale' : ''}`;
 
-  return `
-    <div class="${classes}">
-      <img class="card-img" alt="" src=${img} />
-    </div>
-  `;
+  const cardNode = document.createElement("div");
+  cardNode.className = classes;
+
+  const imgNode = document.createElement('img');
+  imgNode.className = 'card-img';
+  imgNode.alt = "";
+  imgNode.src = img;
+
+  cardNode.append(imgNode);
+
+  return cardNode;
 }

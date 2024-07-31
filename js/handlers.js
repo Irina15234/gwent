@@ -33,9 +33,11 @@ function onClickLeader({img}) {
   const backdrop = document.getElementById('backdrop');
   backdrop.style.display = 'block';
 
-  backdrop.innerHTML = `
-    <div id="backdrop-card">${card({img})}</div>
-  `;
+  const backdropCard = document.createElement("div");
+  backdropCard.id = "backdrop-card";
+  backdropCard.append(card({img}));
+
+  backdrop.append(backdropCard);
 
   addBackdropCardHandlers();
 }
@@ -55,6 +57,8 @@ function addHandlers() {
   addBackdropHandlers();
   addLeadersHandlers();
   addActionPanelHandlers();
+
+  document.addEventListener('contextmenu', event => event.preventDefault());
 }
 
 function addActionPanelHandlers() {
@@ -82,5 +86,19 @@ function addActionPanelHandlers() {
     end.classList.add('battlefield-side__action-panel_command_disabled');
     endGame.classList.add('battlefield-side__action-panel_command_disabled');
     start.className = '';
+  });
+}
+
+function addHandCardsListeners(card) {
+  card.addEventListener('click', () => {
+    console.log('ga', gameState._activePerson);
+    if (!gameState._isActiveGame || gameState._activePerson !== 'player') return;
+
+    // card zoom
+    // select rows
+  });
+
+  card.addEventListener('contextmenu', () => {
+    // zoom card container
   });
 }
