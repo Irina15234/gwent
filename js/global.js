@@ -118,7 +118,7 @@ Object.defineProperty(gameState, "playerCards", {
     newCards.forEach((newCard) => {
       const newCardNode = card({ img: newCard.img, hoverScaled: true });
       cardsContainer.append(newCardNode);
-      addHandCardsListeners(newCardNode);
+      addHandCardsListeners(newCardNode, newCard);
     });
   },
 });

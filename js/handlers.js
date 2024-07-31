@@ -89,16 +89,40 @@ function addActionPanelHandlers() {
   });
 }
 
-function addHandCardsListeners(card) {
-  card.addEventListener('click', () => {
-    console.log('ga', gameState._activePerson);
+function addHandCardsListeners(cardNode, card) {
+  cardNode.addEventListener('click', () => {
     if (!gameState._isActiveGame || gameState._activePerson !== 'player') return;
 
-    // card zoom
-    // select rows
+    if (cardNode.classList.value.includes('card_select')) {
+      cardNode.classList.remove('card_select');
+
+      const selectedRows = document.getElementsByClassName('battlefield-row_select');
+      for (let row of selectedRows) {
+        row.classList.remove('battlefield-row_select');
+      }
+
+      return;
+    }
+
+    const selectedCards = document.getElementsByClassName('card_select');
+    if (selectedCards.length) {
+      selectedCards[0].classList.remove('card_select');
+      const selectedRows = document.getElementsByClassName('battlefield-row_select');
+      for (let row of selectedRows) {
+        row.classList.remove('battlefield-row_select');
+      }
+    }
+
+    cardNode.classList.add('card_select');
+    const playerBattlefield = document.getElementById("battlefield-board__bottom");
+
+    card.rows.forEach((row) => {
+      const rowNode = playerBattlefield.getElementsByClassName(`battlefield-row ${row}`)[0];
+      rowNode.getElementsByClassName('battlefield-row__container')[0].classList.add('battlefield-row_select');
+    });
   });
 
-  card.addEventListener('contextmenu', () => {
+  cardNode.addEventListener('contextmenu', () => {
     // zoom card container
   });
 }
