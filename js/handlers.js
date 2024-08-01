@@ -78,7 +78,7 @@ function addActionPanelHandlers() {
     gameState.pass = [...gameState._pass, 'player'];
   });
   end.addEventListener('click', () => {
-    gameState.activePerson = gameState.activePerson === 'player' ? 'comp' : 'player';
+    gameState.activePerson = gameState._activePerson === 'player' ? 'comp' : 'player';
   });
   endGame.addEventListener('click', () => {
     gameState.isActiveGame = false;

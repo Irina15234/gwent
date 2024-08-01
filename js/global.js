@@ -82,6 +82,29 @@ Object.defineProperty(gameState, 'isActiveGame', {
           cards: playerCards.filter((card) => initCards.has(card))
         }
       };
+    } else {
+      const commands = document.getElementsByClassName('command');
+      for(let command of commands) {
+        command.classList.remove('battlefield-side__action-panel_command_disable');
+      }
+
+      this.compCards = {
+        hand: {count: 0, cards: []},
+        reset: {last: null, count: 0, cards: []},
+        active: {
+          count: compCards.length,
+          cards: compCards
+        }
+      };
+
+      this.playerCards = {
+        hand: {count: 0, cards: []},
+        reset: {last: null, count: 0, cards: []},
+        active: {
+          count: playerCards.length,
+          cards: playerCards
+        }
+      };
     }
   },
 });
@@ -114,6 +137,16 @@ Object.defineProperty(gameState, "playerCards", {
 
     const cardsContainer = document.getElementById('battlefield-cards').getElementsByClassName('battlefield-row__container')[0];
     const cards = cardsContainer.getElementsByClassName('card-img');
+
+    const oldCardsNodes = [];
+    for (const el of cards) {
+      if (!v.hand.cards.find((card) => el.src.includes(card.img))) {
+        oldCardsNodes.push(el.parentElement);
+      }
+    }
+    oldCardsNodes.forEach((node) => {
+      node.remove();
+    });
 
     const newCards = v.hand.cards.filter((card) => {
       for (const el of cards)
