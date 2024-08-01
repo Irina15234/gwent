@@ -1,5 +1,5 @@
 #battlefield {
-  width: 70%;
+  width: 80%;
   min-width: 600px;
   background-image: url("../assets/wood-hor-2.jpg");
   background-size: cover;
@@ -191,8 +191,13 @@ div#battlefield-side {
   cursor: url("../assets/pointer.png"), pointer;
 }
 
-.battlefield-side__action-panel_command_disabled {
+.battlefield-side__action-panel_command_invisible {
   display: none;
+}
+
+.battlefield-side__action-panel_command_disable {
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 .battlefield-row_select {

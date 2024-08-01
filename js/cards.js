@@ -115,4 +115,74 @@ const compCards = [
     isGold: false,
     img: '../assets/cards/'
   },
+  {
+    rows: ['archer'],
+    power: 2,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['artillery'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['archer'],
+    power: 2,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['artillery'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['archer'],
+    power: 2,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['artillery'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['archer'],
+    power: 2,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['artillery'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['archer'],
+    power: 2,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
+  {
+    rows: ['artillery'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/'
+  },
 ];

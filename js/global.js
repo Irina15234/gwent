@@ -30,14 +30,21 @@ Object.defineProperty(gameState, 'isActiveGame', {
     if (v) {
       this.activePerson = Math.random() > 0.5 ? 'comp' : 'player';
       const infoNode = document.getElementById('round-info');
-      infoNode.innerHTML = v === 'comp' ? 'Ваш противник ходит первым' : 'Вы ходите первым';
+      infoNode.innerHTML = this._activePerson === 'comp' ? 'Ваш противник ходит первым' : 'Вы ходите первым';
       infoNode.style.opacity = '1';
 
       setTimeout(() => {
         infoNode.style.opacity = '0';
       }, 1600);
 
-      const initCardsCount = 2;
+      if (this._activePerson === 'comp') {
+        const commands = document.getElementsByClassName('command');
+        for(let command of commands) {
+          command.classList.add('battlefield-side__action-panel_command_disable');
+        }
+      }
+
+      const initCardsCount = 10;
 
       const initCards = new Set();
       let initCardsArr = [];

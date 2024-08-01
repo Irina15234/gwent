@@ -36,9 +36,9 @@ function actionPanel() {
   return `
     <div class="battlefield-side__action-panel">
       <p id="start-command">Начать</p>
-      <p id="continue-command" class="battlefield-side__action-panel_command_disabled">Пас</p>
-      <p id="end-command" class="battlefield-side__action-panel_command_disabled">Завершить ход</p>
-      <p id="endgame-command" class="battlefield-side__action-panel_command_disabled">Сдаться</p>
+      <p id="continue-command" class="command battlefield-side__action-panel_command_invisible">Пас</p>
+      <p id="end-command" class="command battlefield-side__action-panel_command_invisible">Завершить ход</p>
+      <p id="endgame-command" class="battlefield-side__action-panel_command_invisible">Сдаться</p>
     </div>
   `;
 }

@@ -68,11 +68,11 @@ function addActionPanelHandlers() {
   const endGame = document.getElementById('endgame-command');
 
   start.addEventListener('click', () => {
+    continueCommand.classList.remove('battlefield-side__action-panel_command_invisible');
+    end.classList.remove('battlefield-side__action-panel_command_invisible');
+    endGame.classList.remove('battlefield-side__action-panel_command_invisible');
+    start.classList.add('battlefield-side__action-panel_command_invisible');
     gameState.isActiveGame = true;
-    continueCommand.className = '';
-    end.className = '';
-    endGame.className = '';
-    start.classList.add('battlefield-side__action-panel_command_disabled');
   });
   continueCommand.addEventListener('click', () => {
     gameState.pass = [...gameState._pass, 'player'];
@@ -82,9 +82,9 @@ function addActionPanelHandlers() {
   });
   endGame.addEventListener('click', () => {
     gameState.isActiveGame = false;
-    continueCommand.classList.add('battlefield-side__action-panel_command_disabled');
-    end.classList.add('battlefield-side__action-panel_command_disabled');
-    endGame.classList.add('battlefield-side__action-panel_command_disabled');
+    continueCommand.classList.add('battlefield-side__action-panel_command_invisible');
+    end.classList.add('battlefield-side__action-panel_command_invisible');
+    endGame.classList.add('battlefield-side__action-panel_command_invisible');
     start.className = '';
   });
 }

@@ -1,5 +1,5 @@
 #side-menu {
-    width: 30%;
+    width: 20%;
     min-width: 300px;
     background-image: url("../assets/wood-hor.jpg");
     background-size: cover;
@@ -145,7 +145,6 @@ div:has(> .info-block__cards) {
     margin-left: auto;
     border-radius: 100%;
     border: 2px solid darkred;
-    cursor: url("../assets/pointer.png"), pointer;
     padding: 6px;
     display: flex;
     align-items: center;
@@ -160,6 +159,7 @@ div:has(> .info-block__cards) {
 .leader-block__action_active .leader-block__action-button {
     filter: brightness(0.5);
     border-color: var(--light-brown-color);
+    cursor: url("../assets/pointer.png"), pointer;
 }
 
 .leader-block__action-button-img {

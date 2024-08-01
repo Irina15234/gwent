@@ -6,6 +6,26 @@
     user-select: none;
 }
 
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;          /* "auto" или "thin"  */
+        scrollbar-color: var(--dark-brown-color) var(--light-brown-color);   /* плашка скролла и дорожка */
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 10px;               /* ширина scrollbar */
+    height: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: var(--light-brown-color);        /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--dark-brown-color);    /* цвет плашки */
+    border-radius: 24px;       /* закругления плашки */
+    border: none;  /* padding вокруг плашки */
+}
+
 #main-body {
     height: 100vh;
     display: flex;
@@ -75,7 +95,7 @@
 }
 
 #backdrop-card {
-    width: 400px;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
