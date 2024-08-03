@@ -19,17 +19,18 @@
   box-shadow: -20px -50px 71px -12px rgba(0, 0, 0, 0.9) inset;
 }
 
-#battlefield > div {
-  height: 100%;
-  width: 100%;
-}
-
 div#battlefield-side {
   width: 240px;
   min-width: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#battlefield-board {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
 }
 
 #battlefield-board, #battlefield-board__top, #battlefield-board__bottom {
