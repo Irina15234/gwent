@@ -1,6 +1,6 @@
 const playerCards = [
   {
-    id: 1,
+    id: 'card'+1,
     rows: ['warrior'],
     power: 10,
     additional: {},
@@ -8,7 +8,7 @@ const playerCards = [
     img: '../assets/cards/roshe.png'
   },
   {
-    id: 2,
+    id: 'card'+2,
     rows: ['archer'],
     power: 10,
     additional: {},
@@ -16,7 +16,7 @@ const playerCards = [
     img: '../assets/cards/filippa.png'
   },
   {
-    id: 3,
+    id: 'card'+3,
     rows: ['warrior'],
     power: 10,
     additional: {},
@@ -24,7 +24,7 @@ const playerCards = [
     img: '../assets/cards/natalis.png'
   },
   {
-    id: 4,
+    id: 'card'+4,
     rows: ['warrior'],
     power: 10,
     additional: {},
@@ -32,7 +32,7 @@ const playerCards = [
     img: '../assets/cards/tissen.png'
   },
   {
-    id: 5,
+    id: 'card'+5,
     rows: ['warrior'],
     power: 5,
     additional: {},
@@ -40,7 +40,7 @@ const playerCards = [
     img: '../assets/cards/stennis.png'
   },
   {
-    id: 6,
+    id: 'card'+6,
     rows: ['artillery'],
     power: 1,
     additional: {},
@@ -48,7 +48,7 @@ const playerCards = [
     img: '../assets/cards/taler.png'
   },
   {
-    id: 7,
+    id: 'card'+7,
     rows: ['artillery'],
     power: 6,
     additional: {},
@@ -56,7 +56,7 @@ const playerCards = [
     img: '../assets/cards/tower.png'
   },
   {
-    id: 8,
+    id: 'card'+8,
     rows: ['artillery'],
     power: 6,
     additional: {},
@@ -64,7 +64,7 @@ const playerCards = [
     img: '../assets/cards/trebuchet.png'
   },
   {
-    id: 9,
+    id: 'card'+9,
     rows: ['artillery'],
     power: 6,
     additional: {},
@@ -72,7 +72,7 @@ const playerCards = [
     img: '../assets/cards/trebuchet.png'
   },
   {
-    id: 10,
+    id: 'card'+10,
     rows: ['warrior'],
     power: 4,
     additional: {},
@@ -80,7 +80,7 @@ const playerCards = [
     img: '../assets/cards/warriorBlueLine.png'
   },
   {
-    id: 11,
+    id: 'card'+11,
     rows: ['warrior'],
     power: 4,
     additional: {},
@@ -88,7 +88,7 @@ const playerCards = [
     img: '../assets/cards/warriorBlueLine.png'
   },
   {
-    id: 12,
+    id: 'card'+12,
     rows: ['archer'],
     power: 5,
     additional: {},
@@ -96,7 +96,7 @@ const playerCards = [
     img: '../assets/cards/warriorFromKrinfrid.png'
   },
   {
-    id: 13,
+    id: 'card'+13,
     rows: ['archer'],
     power: 5,
     additional: {},
@@ -104,7 +104,7 @@ const playerCards = [
     img: '../assets/cards/warriorFromKrinfrid.png'
   },
   {
-    id: 14,
+    id: 'card'+14,
     rows: ['warrior'],
     power: 5,
     additional: {},
@@ -115,7 +115,7 @@ const playerCards = [
 
 const compCards = [
   {
-    id: 100,
+    id: 'card'+100,
     rows: ['archer'],
     power: 2,
     additional: {},
