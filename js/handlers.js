@@ -137,8 +137,20 @@ function addRowsListeners() {
       const selectedCard = document.getElementsByClassName('card_select')[0];
       const selectedCardImg = selectedCard.getElementsByClassName('card-img')[0];
 
-      row.append(card({ img: selectedCardImg.src, cardId: selectedCardImg.id }));
+      const handCard = gameState._cards.player.hand.cards.find((hc) => hc.id === selectedCardImg.id);
+
       selectedCard.remove();
+      row.append(card({img: handCard.img, cardId: handCard.id}));
+
+      const rowType = row.parentElement.className.split('battlefield-row ')[1];
+
+      gameState.playerCards = {...gameState._cards.player,
+        hand: {
+          count: gameState._cards.player.hand.count - 1,
+          cards: gameState._cards.player.hand.cards.filter((c) => c.id !== handCard.id)
+        },
+        field: { ...gameState._cards.player.field, [rowType]: [...gameState._cards.player.field[rowType], handCard] }
+      };
 
       const selectedRows = document.getElementsByClassName('battlefield-row_select');
       for (let sr of selectedRows) {

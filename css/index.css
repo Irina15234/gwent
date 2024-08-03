@@ -49,6 +49,11 @@
     max-height: 100px;
 }
 
+.points-container_gold {
+    background: darkgoldenrod url("../assets/gold.jpg");
+    background-size: cover;
+}
+
 .points {
     font-size: 3vh;
     color: #444444;
