@@ -35,7 +35,7 @@ function onClickLeader({img}) {
 
   const backdropCard = document.createElement("div");
   backdropCard.id = "backdrop-card";
-  backdropCard.append(card({img}));
+  backdropCard.append(card({img, cardId: 'b-c-id'}));
 
   backdrop.append(backdropCard);
 
@@ -137,7 +137,7 @@ function addRowsListeners() {
       const selectedCard = document.getElementsByClassName('card_select')[0];
       const selectedCardImg = selectedCard.getElementsByClassName('card-img')[0];
 
-      row.append(card({ img: selectedCardImg.src }));
+      row.append(card({ img: selectedCardImg.src, cardId: selectedCardImg.id }));
       selectedCard.remove();
 
       const selectedRows = document.getElementsByClassName('battlefield-row_select');

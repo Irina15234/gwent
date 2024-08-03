@@ -1,4 +1,4 @@
-function card({img, hoverScaled}) {
+function card({img, hoverScaled, cardId}) {
   const classes = `card ${hoverScaled ? 'card_scale' : ''}`;
 
   const cardNode = document.createElement("div");
@@ -8,6 +8,7 @@ function card({img, hoverScaled}) {
   imgNode.className = 'card-img';
   imgNode.alt = "";
   imgNode.src = img;
+  imgNode.id = cardId;
 
   cardNode.append(imgNode);
 
