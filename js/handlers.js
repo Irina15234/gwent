@@ -57,6 +57,7 @@ function addHandlers() {
   addBackdropHandlers();
   addLeadersHandlers();
   addActionPanelHandlers();
+  addRowsListeners();
 
   document.addEventListener('contextmenu', event => event.preventDefault());
 }
@@ -125,4 +126,24 @@ function addHandCardsListeners(cardNode, card) {
   cardNode.addEventListener('contextmenu', () => {
     // zoom card container
   });
+}
+
+function addRowsListeners() {
+  const rows = document.getElementsByClassName('battlefield-row__container');
+  for (let row of rows) {
+    row.addEventListener('click', () => {
+      if (!row.classList.contains('battlefield-row_select')) return;
+
+      const selectedCard = document.getElementsByClassName('card_select')[0];
+      const selectedCardImg = selectedCard.getElementsByClassName('card-img')[0];
+
+      row.append(card({ img: selectedCardImg.src }));
+      selectedCard.remove();
+
+      const selectedRows = document.getElementsByClassName('battlefield-row_select');
+      for (let sr of selectedRows) {
+        sr.classList.remove('battlefield-row_select');
+      }
+    });
+  }
 }
