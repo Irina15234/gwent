@@ -1,6 +1,7 @@
 const gameState = {
   _isActiveGame: false,
   _activePerson: undefined,
+  _isActiveAction: true,
   _lives: {comp: 2, player: 2},
   _pass: [],
   _cards: {
@@ -26,6 +27,12 @@ const gameState = {
 Object.defineProperty(gameState, 'activePerson', {
   set: function (v) {
     this._activePerson = v;
+  },
+});
+
+Object.defineProperty(gameState, 'isActiveAction', {
+  set: function (v) {
+    this._isActiveAction = v;
   },
 });
 

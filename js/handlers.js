@@ -80,6 +80,12 @@ function addActionPanelHandlers() {
   });
   end.addEventListener('click', () => {
     gameState.activePerson = gameState._activePerson === 'player' ? 'comp' : 'player';
+    if (gameState._activePerson === 'player') {
+      gameState.isActiveAction = true;
+    } else {
+      continueCommand.classList.add('battlefield-side__action-panel_command_disable');
+      end.classList.add('battlefield-side__action-panel_command_disable');
+    }
   });
   endGame.addEventListener('click', () => {
     gameState.isActiveGame = false;
@@ -92,7 +98,7 @@ function addActionPanelHandlers() {
 
 function addHandCardsListeners(cardNode, card) {
   cardNode.addEventListener('click', () => {
-    if (!gameState._isActiveGame || gameState._activePerson !== 'player') return;
+    if (!gameState._isActiveGame || gameState._activePerson !== 'player' || !gameState._isActiveAction) return;
 
     if (cardNode.classList.value.includes('card_select')) {
       cardNode.classList.remove('card_select');
@@ -156,6 +162,8 @@ function addRowsListeners() {
       for (let sr of selectedRows) {
         sr.classList.remove('battlefield-row_select');
       }
+
+      gameState.isActiveAction = false;
     });
   }
 }
