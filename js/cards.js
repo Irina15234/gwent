@@ -111,6 +111,86 @@ const playerCards = [
     isGold: false,
     img: '../assets/cards/zigfrid.png'
   },
+  {
+    id: 'card'+15,
+    rows: ['artillery'],
+    power: 6,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/ballista.webp'
+  },
+  {
+    id: 'card'+16,
+    rows: ['warrior'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/bianka.webp'
+  },
+  {
+    id: 'card'+17,
+    rows: ['artillery'],
+    power: 8,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/catapult.webp'
+  },
+  {
+    id: 'card'+18,
+    rows: ['artillery'],
+    power: 8,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/catapult.webp'
+  },
+  {
+    id: 'card'+19,
+    rows: ['archer'],
+    power: 6,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/detmold.webp'
+  },
+  {
+    id: 'card'+20,
+    rows: ['warrior'],
+    power: 4,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/diikstra.webp'
+  },
+  {
+    id: 'card'+21,
+    rows: ['artillery'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/doctor.webp'
+  },
+  {
+    id: 'card'+22,
+    rows: ['artillery'],
+    power: 1,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/kaedwenArtMaster.webp'
+  },
+  {
+    id: 'card'+23,
+    rows: ['archer'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/keira.webp'
+  },
+  {
+    id: 'card'+24,
+    rows: ['archer'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/sheala.webp'
+  },
 ];
 
 const compCards = [
