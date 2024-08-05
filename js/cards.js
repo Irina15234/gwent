@@ -197,86 +197,177 @@ const compCards = [
   {
     id: 'card'+100,
     rows: ['archer'],
-    power: 2,
+    power: 6,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/anagid.webp'
   },
   {
-    rows: ['artillery'],
-    power: 3,
-    additional: {},
-    isGold: false,
-    img: '../assets/cards/'
-  },
-  {
+    id: 'card'+101,
     rows: ['archer'],
-    power: 2,
+    power: 10,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/archer.webp'
   },
   {
+    id: 'card'+101,
     rows: ['artillery'],
+    power: 0,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/artillerySupport.webp'
+  },
+  {
+    id: 'card'+102,
+    rows: ['artillery'],
+    power: 10,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/bol.webp'
+  },
+  {
+    id: 'card'+103,
+    rows: ['warrior'],
+    power: 4,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/derido.webp'
+  },
+  {
+    id: 'card'+104,
+    rows: ['artillery'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/fieryScorpion.webp'
+  },
+  {
+    id: 'card'+105,
+    rows: ['warrior'],
     power: 3,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/impera.webp'
   },
   {
+    id: 'card'+106,
+    rows: ['warrior'],
+    power: 3,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/impera.webp'
+  },
+  {
+    id: 'card'+107,
+    rows: ['warrior'],
+    power: 6,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/kagir.webp'
+  },
+  {
+    id: 'card'+108,
     rows: ['archer'],
-    power: 2,
+    power: 1,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/laserSupport.webp'
   },
   {
-    rows: ['artillery'],
-    power: 3,
+    id: 'card'+109,
+    rows: ['warrior'],
+    power: 10,
     additional: {},
-    isGold: false,
-    img: '../assets/cards/'
+    isGold: true,
+    img: '../assets/cards/leto.webp'
   },
   {
+    id: 'card'+110,
     rows: ['archer'],
-    power: 2,
+    power: 5,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/matsen.webp'
   },
   {
+    id: 'card'+111,
+    rows: ['warrior'],
+    power: 10,
+    additional: {},
+    isGold: true,
+    img: '../assets/cards/menno.webp'
+  },
+  {
+    id: 'card'+112,
+    rows: ['warrior'],
+    power: 7,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/osterien.webp'
+  },
+  {
+    id: 'card'+113,
+    rows: ['warrior'],
+    power: 4,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/rainfarn.webp'
+  },
+  {
+    id: 'card'+114,
     rows: ['artillery'],
-    power: 3,
+    power: 6,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/sapper.webp'
   },
   {
+    id: 'card'+115,
+    rows: ['warrior'],
+    power: 9,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/skellen.webp'
+  },
+  {
+    id: 'card'+116,
     rows: ['archer'],
-    power: 2,
+    power: 10,
     additional: {},
-    isGold: false,
-    img: '../assets/cards/'
+    isGold: true,
+    img: '../assets/cards/tibor.webp'
   },
   {
-    rows: ['artillery'],
-    power: 3,
-    additional: {},
-    isGold: false,
-    img: '../assets/cards/'
-  },
-  {
+    id: 'card'+117,
     rows: ['archer'],
-    power: 2,
+    power: 4,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/vangemar.webp'
   },
   {
-    rows: ['artillery'],
-    power: 3,
+    id: 'card'+118,
+    rows: ['archer'],
+    power: 6,
     additional: {},
     isGold: false,
-    img: '../assets/cards/'
+    img: '../assets/cards/vigo.webp'
+  },
+  {
+    id: 'card'+119,
+    rows: ['artillery'],
+    power: 10,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/voorhis.webp'
+  },
+  {
+    id: 'card'+120,
+    rows: ['warrior'],
+    power: 5,
+    additional: {},
+    isGold: false,
+    img: '../assets/cards/youngMesseger.webp'
   },
 ];
