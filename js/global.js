@@ -27,6 +27,10 @@ const gameState = {
 Object.defineProperty(gameState, 'activePerson', {
   set: function (v) {
     this._activePerson = v;
+
+    if (v === 'comp') {
+      compAction();
+    }
   },
 });
 
@@ -42,6 +46,9 @@ Object.defineProperty(gameState, 'isActiveGame', {
 
     if (v) {
       initGame();
+      if (gameState._activePerson === 'comp') {
+        compAction();
+      }
     } else {
       resetGame();
     }
@@ -56,9 +63,11 @@ Object.defineProperty(gameState, 'lives', {
 
 Object.defineProperty(gameState, "compCards", {
   set: function (v) {
-    this._cards.comp = v;
-
     changeHandCardsCount(v, 'comp');
+    changeHandCardsForComp(v);
+    changeFieldCards(v, 'comp');
+
+    this._cards.comp = v;
   },
 });
 

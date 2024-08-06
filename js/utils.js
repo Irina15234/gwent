@@ -5,6 +5,18 @@ const changeHandCardsCount = (v, player) => {
   sideContainer.getElementsByClassName('battlefield-side__count')[0].innerHTML = v.active.count;
 };
 
+const changeHandCardsForComp = (v) => {
+  const selectedCard = gameState._cards.comp.hand.cards.find((card) => !v.hand.cards.find((c) => card.id === c.id));
+
+  if (selectedCard) {
+    const cardsContainer = document.getElementById('battlefield-board__top').getElementsByClassName(`battlefield-row ${selectedCard.rows[0]}`)[0].getElementsByClassName('battlefield-row__container')[0];
+
+    const newCardNode = card({img: selectedCard.img, hoverScaled: true, cardId: selectedCard.id});
+    cardsContainer.append(newCardNode);
+    addHandCardsListeners(newCardNode, selectedCard);
+  }
+};
+
 const changeHandCards = (v) => {
   const cardsContainer = document.getElementById('battlefield-cards').getElementsByClassName('battlefield-row__container')[0];
   const cards = cardsContainer.getElementsByClassName('card-img');
@@ -109,8 +121,13 @@ const resetGame = () => {
   compPoints.classList.remove('points-container_gold');
   playerPoints.classList.remove('points-container_gold');
 
-  gameState.compPoints = { total: 0, warrior: 0, archer: 0, artillery: 0 };
-  gameState.playerPoints = { total: 0, warrior: 0, archer: 0, artillery: 0 };
+  gameState.compPoints = {total: 0, warrior: 0, archer: 0, artillery: 0};
+  gameState.playerPoints = {total: 0, warrior: 0, archer: 0, artillery: 0};
+
+  const rows = document.getElementsByClassName('battlefield-row__container');
+  for (let row of rows) {
+    row.innerHTML = '';
+  }
 };
 
 const initGame = () => {
@@ -125,11 +142,9 @@ const initGame = () => {
     }, 1600);
   };
   const initCommands = () => {
-    if (gameState._activePerson === 'comp') {
-      const commands = document.getElementsByClassName('command');
-      for (let command of commands) {
-        command.classList.add('battlefield-side__action-panel_command_disable');
-      }
+    const commands = document.getElementsByClassName('command');
+    for (let command of commands) {
+      command.classList.add('battlefield-side__action-panel_command_disable');
     }
   };
   const initCards = () => {

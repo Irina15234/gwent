@@ -82,10 +82,9 @@ function addActionPanelHandlers() {
     gameState.activePerson = gameState._activePerson === 'player' ? 'comp' : 'player';
     if (gameState._activePerson === 'player') {
       gameState.isActiveAction = true;
-    } else {
-      continueCommand.classList.add('battlefield-side__action-panel_command_disable');
-      end.classList.add('battlefield-side__action-panel_command_disable');
     }
+    continueCommand.classList.add('battlefield-side__action-panel_command_disable');
+    end.classList.add('battlefield-side__action-panel_command_disable');
   });
   endGame.addEventListener('click', () => {
     gameState.isActiveGame = false;
@@ -164,6 +163,11 @@ function addRowsListeners() {
       }
 
       gameState.isActiveAction = false;
+
+      const commands = document.getElementsByClassName('command');
+      for (let command of commands) {
+        command.classList.remove('battlefield-side__action-panel_command_disable');
+      }
     });
   }
 }
