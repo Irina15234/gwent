@@ -3,7 +3,6 @@ function renderSideMenu() {
 
     sideMenu.innerHTML = leaderBlock({
         leader: { card: 'assets/cards/emgir.jpg' },
-        isActiveAction: false
     });
 
     sideMenu.innerHTML += infoBlock({
@@ -22,6 +21,5 @@ function renderSideMenu() {
 
     sideMenu.innerHTML += leaderBlock({
         leader: { card: 'assets/cards/foltest.jpg' },
-        isActiveAction: false
     });
 }
