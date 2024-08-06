@@ -20,7 +20,7 @@
 }
 
 div#battlefield-side {
-  width: 240px;
+  width: 30%;
   min-width: 240px;
   display: flex;
   flex-direction: column;
@@ -137,8 +137,8 @@ div#battlefield-side {
 }
 
 .battlefield-side__discard {
-  width: 100px;
-  height: 150px;
+  width: 40%;
+  aspect-ratio: 1/1.5;
   box-shadow: 0 -8px 20px 4px rgba(0, 0, 0, 0.8) inset;
 }
 
@@ -149,8 +149,8 @@ div#battlefield-side {
 }
 
 .battlefield-side__card-desk {
-  width: 100px;
-  height: 150px;
+  width: 40%;
+  aspect-ratio: 1/1.5;
   box-shadow: 4px 4px 4px 0 rgb(119 103 76);
 }
 
@@ -158,7 +158,7 @@ div#battlefield-side {
   padding: 4px 8px;
   background: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 16px;
+  font-size: 2.2vh;
   width: fit-content;
   position: absolute;
   bottom: 0;
@@ -183,8 +183,7 @@ div#battlefield-side {
 }
 
 .battlefield-side__action-panel p {
-  line-height: 24px;
-  font-size: 18px;
+  font-size: 3vh;
   font-weight: bold;
 }
 
