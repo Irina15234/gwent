@@ -76,11 +76,14 @@ function addActionPanelHandlers() {
     gameState.isActiveGame = true;
   });
   continueCommand.addEventListener('click', () => {
-    gameState.pass = [...gameState._pass, 'player'];
+    gameState.pass = 'player';
   });
   end.addEventListener('click', () => {
     gameState.activePerson = gameState._activePerson === 'player' ? 'comp' : 'player';
     if (gameState._activePerson === 'player') {
+      gameState.isActiveAction = true;
+    } else {
+      compAction();
       gameState.isActiveAction = true;
     }
     continueCommand.classList.add('battlefield-side__action-panel_command_disable');

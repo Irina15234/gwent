@@ -124,9 +124,31 @@ const resetGame = () => {
   gameState.compPoints = {total: 0, warrior: 0, archer: 0, artillery: 0};
   gameState.playerPoints = {total: 0, warrior: 0, archer: 0, artillery: 0};
 
+  gameState.activePerson = undefined;
+  gameState.isActiveAction = true;
+  gameState.pass = undefined;
+  gameState.lives = {comp: 2, player: 2};
+
   const rows = document.getElementsByClassName('battlefield-row__container');
   for (let row of rows) {
     row.innerHTML = '';
+  }
+
+  const passElements = document.getElementsByClassName('pass');
+  for (let pass of passElements) {
+    pass.style.display = 'none';
+  }
+
+  const infoBlock = document.getElementsByClassName('info-block');
+
+  for (let block of infoBlock) {
+    const lives = block.getElementsByClassName('info-block__lives')[0];
+    lives.innerHTML = '';
+    const node = document.createElement("img");
+    node.width = 24;
+    node.height = 24;
+    node.src = "../../assets/red-gem.svg";
+    lives.append(node, node.cloneNode());
   }
 };
 
@@ -139,6 +161,9 @@ const initGame = () => {
 
     setTimeout(() => {
       infoNode.style.opacity = '0';
+      if (gameState._activePerson === 'comp') {
+        compAction();
+      }
     }, 1600);
   };
   const initCommands = () => {
@@ -188,9 +213,9 @@ const initGame = () => {
     };
   };
 
-  initActivePerson();
   initCommands();
   initCards();
+  initActivePerson();
 };
 
 const changePass = () => {
@@ -207,5 +232,38 @@ const changePass = () => {
   } else {
     compPass.style.display = 'none';
     playerPass.style.display = 'none';
+  }
+
+  if (gameState._pass.length === 2) {
+    endGameStep();
+  }
+};
+
+const endGameStep = () => {
+  const compPoints = gameState._points.comp.total;
+  const playerPoints = gameState._points.player.total;
+
+  if (compPoints > playerPoints) {
+    gameState.lives = { ...gameState._lives, player: gameState._lives.player - 1 };
+  } else if (playerPoints > compPoints) {
+    gameState.lives = { ...gameState._lives, comp: gameState._lives.comp - 1 };
+  } else {
+    gameState.lives = { comp: gameState._lives.comp - 1, player: gameState._lives.player - 1 };
+  }
+
+  gameState.pass = undefined;
+};
+
+const changeLives = (v) => {
+  if (v.comp === 0) {
+    // comp loose
+  } else if (v.player === 0) {
+    // player loose
+  } else if (v.comp < gameState._lives.comp) {
+    const lives = document.getElementsByClassName('info-block comp')[0].getElementsByClassName('info-block__lives')[0];
+    lives.getElementsByTagName('img')[0].remove();
+  } else {
+    const lives = document.getElementsByClassName('info-block player')[0].getElementsByClassName('info-block__lives')[0];
+    lives.getElementsByTagName('img')[0].remove();
   }
 };

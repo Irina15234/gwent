@@ -304,7 +304,7 @@ const compCards = [
     power: 7,
     additional: {},
     isGold: false,
-    img: '../assets/cards/osterien.webp'
+    img: '../assets/cards/osterlen.webp'
   },
   {
     id: 'card'+113,

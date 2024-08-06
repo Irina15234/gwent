@@ -27,10 +27,6 @@ const gameState = {
 Object.defineProperty(gameState, 'activePerson', {
   set: function (v) {
     this._activePerson = v;
-
-    if (v === 'comp') {
-      compAction();
-    }
   },
 });
 
@@ -57,6 +53,8 @@ Object.defineProperty(gameState, 'isActiveGame', {
 
 Object.defineProperty(gameState, 'lives', {
   set: function (v) {
+    changeLives(v);
+
     this._lives = v;
   },
 });

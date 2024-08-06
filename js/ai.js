@@ -1,4 +1,9 @@
 function compAction() {
+  if (gameState._pass.includes('comp')) {
+    gameState.activePerson = 'player';
+    return;
+  }
+
   if (gameState._points.comp.total > gameState._points.player.total) {
     gameState.pass = 'comp';
     gameState.activePerson = 'player';
