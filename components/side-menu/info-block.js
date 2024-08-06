@@ -26,5 +26,6 @@ function infoBlock({title, subtitle, cardsCount, person}) {
       </div>
       
       <div class='points-container'><span class="points">0</span></div>
+      <span class="pass">Пас</span>
     </div>`
 }

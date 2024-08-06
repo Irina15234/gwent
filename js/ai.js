@@ -1,4 +1,10 @@
 function compAction() {
+  if (gameState._points.comp.total > gameState._points.player.total) {
+    gameState.pass = 'comp';
+    gameState.activePerson = 'player';
+    return;
+  }
+
   const handCards = gameState._cards.comp.hand.cards;
   const fieldCards = gameState._cards.comp.field;
 

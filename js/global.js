@@ -84,6 +84,8 @@ Object.defineProperty(gameState, "playerCards", {
 Object.defineProperty(gameState, "pass", {
   set: function (v) {
     this._pass = v ? [...this._pass, v] : [];
+
+    changePass();
   },
 });
 

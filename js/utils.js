@@ -192,3 +192,20 @@ const initGame = () => {
   initCommands();
   initCards();
 };
+
+const changePass = () => {
+  const compPass = document.getElementsByClassName('info-block comp')[0].getElementsByClassName('pass')[0];
+  const playerPass = document.getElementsByClassName('info-block player')[0].getElementsByClassName('pass')[0];
+
+  if (gameState._pass.length) {
+    if (gameState._pass.includes('comp')) {
+      compPass.style.display = 'block';
+    }
+    if (gameState._pass.includes('player')) {
+      playerPass.style.display = 'block';
+    }
+  } else {
+    compPass.style.display = 'none';
+    playerPass.style.display = 'none';
+  }
+};
